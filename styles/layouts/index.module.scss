@@ -1,0 +1,89 @@
+@mixin background {
+  background-size: cover;
+  background-position: center;
+}
+
+.Index {
+  width: 100vw;
+  padding: 2rem 5vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+
+  .Index_overview {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-gap: 1rem;
+
+    .Index_clock {
+      align-self: end;
+    }
+  }
+
+  .Index_details {
+    padding: 2rem;
+    display: grid;
+    grid-gap: 2rem;
+    align-items: center;
+  }
+}
+
+.Index___Morning,
+.Index___Afternoon {
+  background-image: url("../../public/assets/mobile/bg-image-daytime.jpg");
+  @include background;
+
+  .Index_details {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.Index___Evening,
+.Index___Night {
+  background-image: url("../../public/assets/mobile/bg-image-nighttime.jpg");
+  @include background;
+
+  .Index_details {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .Index___Morning,
+  .Index___Afternoon {
+    background-image: url("../../public/assets/tablet/bg-image-daytime.jpg");
+    @include background;
+  }
+
+  .Index___Evening,
+  .Index___Night {
+    background-image: url("../../public/assets/tablet/bg-image-nighttime.jpg");
+    @include background;
+  }
+
+  .Index_details {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Index___Morning,
+  .Index___Afternoon {
+    background-image: url("../../public/assets/desktop/bg-image-daytime.jpg");
+    @include background;
+  }
+
+  .Index___Evening,
+  .Index___Night {
+    background-image: url("../../public/assets/desktop/bg-image-nighttime.jpg");
+    @include background;
+  }
+
+  .Index_clock {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+  }
+}

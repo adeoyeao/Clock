@@ -1,0 +1,52 @@
+@import "../settings/colors.scss";
+
+.Button {
+      padding: 0.5rem;
+      background: white;
+      appearance: none;
+      outline: none;
+      border: none;
+      border-radius: 3rem;
+      width: 9.125rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      cursor: pointer;
+
+      p {
+            color: black;
+            text-transform: capitalize;
+      }
+
+      div {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+      }
+
+      .Button_arrow___more {
+            background-color: black;
+            background-image: url(../../public/assets/desktop/icon-arrow-up.svg);
+      }
+
+      .Button_arrow___less {
+            background-color: black;
+            background-image: url(../../public/assets/desktop/icon-arrow-up.svg);
+            transform: rotate(180deg)
+      }
+
+      &:hover .Button_arrow___more {
+            background-color: $grey;
+            background-image: url(../../public/assets/desktop/icon-arrow-up.svg);
+      }
+
+      &:hover .Button_arrow___less {
+            background-color: $grey;
+            background-image: url(../../public/assets/desktop/icon-arrow-up.svg);
+            transform: rotate(180deg)
+      }
+
+      &:hover p {
+            color: $grey;
+      }
+}
