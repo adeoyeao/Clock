@@ -2,7 +2,7 @@ import useSWR from "swr"
 import styles from "../styles/components/quote.module.scss"
 
 const Quote = () => {
-      const url = `http://api.quotable.io/random`
+      const url = `https://api.quotable.io/random`
       const fetcher = async (...args) => {
             const results = await fetch(...args)
             return await results.json()
